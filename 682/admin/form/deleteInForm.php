@@ -5,12 +5,6 @@
     $fname = $_GET["fname"];
     $bid = $_GET["bid"];
     
-    $sql = "SELECT* FROM building WHERE id = $bid";
-    $res = $conn->prepare($sql);
-    $res->execute();
-    $result = $res->fetchALL(PDO::FETCH_ASSOC);
-    $bname = $result[0]["name"];
-    
     $sql = "DELETE FROM form WHERE fid = $fid and fname = '$fname' and bid = $bid";
     $res = $conn->prepare($sql);
     $res->execute();
@@ -23,7 +17,7 @@
     $res = $conn->prepare($sql);
     $res->execute();
     
-//    echo "<script>alert(\"Form has been deleted!\"); window.location.href = './form.php?username=".$username."&id=".$bid."&name=".$fname."';</script>";
-    echo "<script>alert(\"Form has been deleted!\"); window.location.href = './buildingForm.php?username=".$username."&id=".$bid."&name=".$bname."';</script>";
+    echo "<script>alert(\"Form has been deleted!\"); window.location.href = './form.php?username=".$username."&id=".$bid."&name=".$fname."';</script>";
+//    echo "<script>alert(\"Form has been deleted!\"); window.location.href = './buildingForm.php?username=".$username."&id=".$bid."&name=".$bname."';</script>";
     
     ?>

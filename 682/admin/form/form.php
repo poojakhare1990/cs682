@@ -59,7 +59,7 @@ padding:10px 0px 30px 0px;
 //        echo "<td><font color='white' size='5em'>".$bid."</font></td>";
         
         echo "<td><button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$fname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>SELECT</font></button></td>";
-        echo "<td><button type='button' onclick='window.location.href=\"./deleteForm.php?username=".$username."&fid=".$id."&fname=".$fname."&bid=".$bid."\"'><font size='3em'>DELETE FORM</font></button></td>";
+        echo "<td><button type='button' onclick='window.location.href=\"./deleteInForm.php?username=".$username."&fid=".$id."&fname=".$fname."&bid=".$bid."\"'><font size='3em'>DELETE FORM</font></button></td>";
         
 //        echo "<td><a href='./edit.php?username=".$username."&name=".$fname."&id=".$bid."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
 //        echo "<td><a href='./deleteForm.php?username=".$username."&id=".$id."&fname=".$fname."&bid=".$bid."'>DELETE</a></td>";

@@ -68,7 +68,7 @@
                             echo "<td>".$technician."</td>";
                             
                             echo "<td><button type='button' onclick='window.location.href=\"../form/edit.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>CHOOSE FORM</font></button></td>";
-                            echo "<td><button type='button' onclick='window.location.href=\"./deleteGetBuilding.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>DELETE FORM</font></button></td>";
+                            echo "<td><button type='button' onclick='window.location.href=\"./deleteGetBuilding.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>DELETE USER</font></button></td>";
                             
 //                            echo "<td><a href='../form/edit.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
 //                            echo "<td><a href='./deleteGetBuilding.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>DELETE FORM</a></td>";
