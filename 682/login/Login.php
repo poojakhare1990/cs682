@@ -1,30 +1,20 @@
 <?php
     require("connection.php");
-//    // Define $username and $password
+
     $username=$_POST["Username"];
-    $password=md5($_POST["Password"]);
-    
+    $password=$_POST["Password"];
 
-    // To protect MySQL injection (more detail about MySQL injection)
-    $username = stripslashes($username);
-    $password = stripslashes($password);
-
-    $conn -> quote($username);
-    $conn -> quote($password);
-
-
-    $sql="SELECT COUNT(*) FROM login WHERE username='$username'";
+    $sql="SELECT COUNT(*) FROM login WHERE username='$username' AND password='$password'";
     $res = $conn -> prepare($sql);
     $res -> execute();
     $count = $res -> fetchColumn();
 
-    // If result matched $username and $password, table row must be 1 row
     if($count == 1) {
-        echo "Success!";
+        echo "<script> window.location.href = '../admin/admin.php';</script>";
     } else if($count == 0){
-        echo "User not exists!";
+        echo"<script>alert('Wrong Username or Password!');history.back(-1);</script>";
     } else{
-        echo "Error! <br/>COUNT:$count<br/>";
+        echo"<script>alert('Wrong Input');history.back(-1);</script>";
     }
 
     $conn = null;

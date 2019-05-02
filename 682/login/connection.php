@@ -7,7 +7,7 @@
     // Connect to server and select databse.
     try{
         $conn = new PDO("mysql:host=$host;dbname=formdb", $username, $password, $options);
-        echo "Connected to MySQL! <br/>";
+        //echo "Connected to MySQL! <br/>";
     }catch(PDOException $e){
         echo $e -> getMessage();
     }
