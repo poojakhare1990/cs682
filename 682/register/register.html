@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<link href="../css/style1.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="./Register_inputCheck.js"></script>
+		<style>
+            body {
+                background-color: rgb(50, 70, 80);
+            }
+        </style>
+</head>
+ 
+ <body>
+	<div class="main">
+        <h1 style="text-align:center; font-size:80px; color:white;">Register</h1>
+        <h2>Register your new account</h2>
+        <form action="./Register.php" method="post" onsubmit="return checkInput()">
+            <div class="clear"> </div>
+            <div class="lable-2">
+                <input type="text" id="id"class="text" name="Id" value="ID number(Number Only)"
+                    onfocus="this.value = ''" oninput ="value=value.replace(/[^\d]/g,'')">
+                <input type="text" id="usr" class="text" name="Username" value="Username" onfocus="this.value = ''">
+                <input type="password" id="pwd1" class="text" name="Password" placeholder="Password" onfocus="this.value = ''">
+                <input type="password" id="pwd2" class="text" placeholder="Confirm Password" onfocus="this.value = ''">
+                <select name="Role" style="appearance:none; color:inherit; font-size:1em; margin: 10px 0px;">
+                    <option value="Admin">ADMIN</option>
+                    <option value="Manager">MANAGER</option>
+                    <option value="Technician">TECHNICIAN</option>
+                </select>
+            </div>
+            <div class="clear"> </div>
+            <div class="submit">
+                <input type="submit" value="Create account">
+            </div>
+            <div class="clear"> </div>
+        </form>
+		</div>
+        <div class="copy-right">
+            <p>UMB <a href="http://www.umb.edu" target="_blank" title="Software Development">Software Development</a></p>
+        </div>
+</body>
+</html>

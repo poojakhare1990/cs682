@@ -2,25 +2,25 @@
 <html>
     <head>
         <title>Home</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<!--        <link href="css/style1.css" rel="stylesheet" type="text/css" media="all"/>-->
-</head>
+        <link href="./css/style.css" rel="stylesheet" type="text/css" media="all"/>
+        <script src="./login/Login_inputCheck.js"></script>
+    </head>
     <body>
         <div class="login">
             <br/><br/>
             <h2>Software Development</h2>
             <div class="login-top">
                 <h1>USER LOGIN</h1>
-                <form action="Welcome.php" method="post">
-                    <input type="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}">
-                    <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+                <form action="./login/Login.php" method="post" onsubmit="return checkInput()">
+                    <input type="text" id="usr" value="Username" name="Username"
+                        onfocus="this.value = ''">
+                    <input type="password" id="pwd" placeholder="Password" name="Password" onfocus="this.value = ''">
                     <div class="forgot">
-                        <a href="Forgot.php">forgot Password</a>
                         <input type="submit" value="Login">
                     </div>
             </div>
             <div class="login-bottom">
-                <h3>New User &nbsp;<a href="./register.html">Register</a>&nbsp; Here</h3>
+                <h3>New User &nbsp;<a href="./register/register.html">Register</a>&nbsp; Here</h3>
             </div>
         </div>
         </form>
@@ -29,5 +29,5 @@
         </div>
 
 
-</body>
+    </body>
 </html>
