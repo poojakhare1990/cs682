@@ -76,6 +76,30 @@ function checkBuildingUserInput(){
         return false;
     }
 }
+function checkTechnicianUserInput(){
+    var technician = document.getElementById("technician").value;
+
+    if(technician == "technician" || technician == ""){
+        alert("Technician name cannot be empty!");
+        return false;
+    }
+}
+function checkQuestionInput(){
+    var question = document.getElementById("question").value;
+
+    if(question == "question" || question == ""){
+        alert("Question cannot be empty!");
+        return false;
+    }
+}
+function checkOptionInput(){
+    var option = document.getElementById("option").value;
+
+    if(option == "option" || option == ""){
+        alert("Question cannot be empty!");
+        return false;
+    }
+}
 
 
 

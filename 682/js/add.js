@@ -1,5 +1,5 @@
 function addBuilding(){
-    window.location.href="./add.php";
+    window.location.href="./building/add.php";
 }
 function addUser(){
     window.location.href="./addUser.php";

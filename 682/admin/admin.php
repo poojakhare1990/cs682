@@ -1,3 +1,7 @@
+<?php
+    include("../login/connection.php");
+    $username = $_GET["username"];
+    ?>
 <!DOCTYPE html>
 
 <html>
@@ -18,15 +22,20 @@
         <div class="page">
             <div class="header">
                 <ul>
-                    <li class="selected"><font color="#f78117">Home</font></li>
-                    <li><a href="./form.php"><font color="white">Form</font></a></li>
-                    <li><a href="./employee.php"><font color="white">Employee</font></a></li>
+                <?php
+                    echo"<li><a href=\"./admin.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
+                    echo"<li><a href=\"./form/form.php?username=".$username."\"><font color=\"white\">Form</font></a></li>";
+                    echo"<li><a href=\"./user/employee.php?username=".$username."\"><font color=\"white\">Employee</font></a></li>";
+                    echo"<li><a href=\"../../index.html\"><font color=\"white\">Logout</font></a></li>";
+                    ?>
                 </ul>
             </div>
             <div class="body">
                 <div id="featured">
-                    <button type="button" onclick="addBuilding()">
-                            <font size="5em">ADD BUILDING</font></button>
+                <?php
+                    echo "<button type=\"button\" onclick=\"window.location.href='./building/add.php?username=".$username."'\">";
+                    echo "<font size=\"5em\">ADD BUILDING</font></button>";
+                ?>
                     <center><table border="1" width="900">
                         <caption><font color="white" size="10em"><b>Building</b></font></caption>
                         <tr>
@@ -38,7 +47,6 @@
                             <th></th>
                         </tr>
                         <?php
-                            include("../login/connection.php");
                             $sql = "SELECT* FROM building";
                             $res = $conn->prepare($sql);
                             $res->execute();
@@ -47,29 +55,21 @@
                             {
                                 $id = $result[$i]["id"];
                                 $name = $result[$i]["name"];
-                                $manager = $result[$i]["manager"];
-                                $technician = $result[$i]["technician"];
+                                $manager = $result[$i]["manager_id"];
+                                $technician = $result[$i]["technician_id"];
                         
                                 echo "<tr>";
                                 echo "<td><font color='white' size='5em'>".$id."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$name."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$manager."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$technician."</font></td>";
-                                echo "<td><a href='get.php?id=".$id."&name=".$name."'>ENTER</a></td>";
-                                echo "<td><a href='delete.php?id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>DELETE</a></td>";
+                                echo "<td><a href='./building/getBuilding.php?username=".$username."&id=".$id."&name=".$name."'>ENTER</a></td>";
+                                echo "<td><a href='./building/deleteBuilding.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>DELETE</a></td>";
                                 echo "</tr>";
                             }
                         ?>
                     </table></center>
                 </div>
-            </div>
-            <div class="footer">
-                <ul style="height:300px;">
-                    <li><a>Home</a></li>
-                    <li><a href="./form.php">Form</a></li>
-                    <li><a href="./employee.php">Employee</a></li>
-                </ul>
-                <p>&#169; Copyright &#169; 2019. Company name all rights reserved. collect from <a href="http://www.umb.edu/" title="UMB">UMB</a></p>
             </div>
         </div>
     </body>
