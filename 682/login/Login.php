@@ -21,10 +21,10 @@
         if($createAccess == 1 && $editAccess == 1 && $changeAccess == 1){
             echo "<script> window.location.href = '../admin/admin.php?username=".$username."';</script>";
         }else if($createAccess == 0 && $editAccess == 1 && $changeAccess == 1){
-            echo "<script> window.location.href = '../manager/admin.php?username=".$username."';</script>";
+            echo "<script> window.location.href = '../manager/manager.php?username=".$username."';</script>";
         }
         else{
-            echo "<script> window.location.href = '../technician/admin.php?username=".$username."';</script>";
+            echo "<script> window.location.href = '../technician/technician.php?username=".$username."';</script>";
         }
     }else{
         echo"<script>alert('Wrong Input');history.back(-1);</script>";

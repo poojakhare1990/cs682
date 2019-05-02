@@ -35,7 +35,7 @@ padding:10px 0px 30px 0px;
 </div>
 <div class="body">
 <?php
-    echo "<button type='button' onclick='window.location.href=\"./buildingForm.php?username=".$username."&name=".$fname."&id=".$bid."\"'><font size='5em'>BACK</font></button>";
+    echo "<button type='button' style=\"margin-right:20px\" onclick='window.location.href=\"./buildingForm.php?username=".$username."&name=".$fname."&id=".$bid."\"'><font size='5em'>BACK</font></button>";
     echo "<button type='button' onclick='window.location.href=\"./addQuestion.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."\"'><font size='5em'>ADD QUESTION</font></button>";
     ?>
 <center><table border="1" width="900">
