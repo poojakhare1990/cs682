@@ -32,7 +32,6 @@
         </ul>
         </div>
     <div class="body">
-        <div id="featured">
         <?php
             echo "<button type='button' onclick='window.location.href=\"./addNamelist.php?username=".$username."\"'><font size='5em'>ADD NEW USER</font></button>";
             echo "<center><table border='1' width='900'>";
@@ -76,7 +75,6 @@
             }
             ?>
         </table></center>
-    </div>
     </div>
     </div>
 </body>

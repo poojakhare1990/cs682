@@ -31,7 +31,6 @@ padding:10px 0px 30px 0px;
 </ul>
 </div>
 <div class="body">
-<div id="featured">
 <center><table border="1" width="900">
 <caption><font color="white" size="10em"><b>FORM</b></font></caption>
 <tr>
@@ -42,7 +41,7 @@ padding:10px 0px 30px 0px;
 <th></th>
 </tr>
 <?php
-    $sql = "SELECT* FROM form";
+    $sql = "SELECT* FROM form f, building b WHERE f.bid = b.id";
     $res = $conn->prepare($sql);
     $res->execute();
     $result = $res->fetchALL(PDO::FETCH_ASSOC);
@@ -51,18 +50,19 @@ padding:10px 0px 30px 0px;
         $id = $result[$i]["fid"];
         $fname = $result[$i]["fname"];
         $bid = $result[$i]["bid"];
+        $manager = $result[$i]["manager_id"];
+        $technician = $result[$i]["technician_id"];
         
         echo "<tr>";
         echo "<td><font color='white' size='5em'>".$id."</font></td>";
         echo "<td><font color='white' size='5em'>".$fname."</font></td>";
         echo "<td><font color='white' size='5em'>".$bid."</font></td>";
-        echo "<td><a href='./getForm.php?username=".$username."&fid=".$id."&fname=".$fname."&bid=".$bid."'>ENTER</a></td>";
+        echo "<td><a href='./edit.php?username=".$username."&name=".$fname."&id=".$bid."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
         echo "<td><a href='./deleteForm.php?username=".$username."&id=".$id."&fname=".$fname."&bid=".$bid."'>DELETE</a></td>";
         echo "</tr>";
     }
     ?>
 </table></center>
-</div>
 </div>
 </div>
 </body>

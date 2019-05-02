@@ -4,6 +4,11 @@
     $fid = $_GET["fid"];
     $bid = $_GET["bid"];
     $fname = $_GET["fname"];
+    $manager = $_GET["manager"];
+    $technician = $_GET["technician"];
+    
+    $data = array("username" => $username, "fid" => $fid, "bid" => $bid, "fname" => $fname, "manager" => $manager, "technician" => $technician);
+    $json = json_encode($data);
     ?>
 <!DOCTYPE html>
 
@@ -42,7 +47,7 @@ background: #ffffff;
     border-top: none;
 }
 </style>
-<script src="../../js/add.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <div class="page">
@@ -58,8 +63,7 @@ background: #ffffff;
 </div>
 <div class="body">
 <?php
-    echo "<button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$fname."&id=".$bid."\"'><font size='5em'>BACK</font></button>";
-    echo "<button type='button'><font size='5em'>SUBMIT</font></button>";
+    echo "<button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$fname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='5em'>BACK</font></button>";
     ?>
 </div>
 <center>
@@ -69,6 +73,11 @@ background: #ffffff;
     $res = $conn->prepare($sql);
     $res->execute();
     $result = $res->fetchALL(PDO::FETCH_ASSOC);
+    
+    echo "<table border=\"1\" width=\"900\">";
+
+    echo "<form id=\"form1\" name=\"form\" method=\"post\">";
+    
     for($i = 0; $i < count($result); $i++)
     {
         $oid = $result[$i]["oid"];
@@ -79,6 +88,7 @@ background: #ffffff;
         echo "<tr>";
         echo "<td><font color='white' size='6em'>$question\t</font></td>";
         
+        echo "<td>";
         $query = "SELECT* FROM options WHERE oid = $oid";
         $run = $conn->prepare($query);
         $run->execute();
@@ -87,33 +97,40 @@ background: #ffffff;
             $types = $end[$j]["types"];
             $val = $end[$j]["val"];
             
-//            $num++;
-//            $myObj->abc = "123";
-//            $myObj->abc = "456";
-//            $myObj->abc = "789";
-            $myObj = array("abc" => [123, 456]);
-            $myJSON = json_encode($myObj);
-            
-            
             if($types == "PLAIN TEXT"){
-                echo "<td><input type=\"text\" name=\"option1\" style=\"width: 300; height: 10\"></td>";
+                echo "<input type=\"text\" name=\"plaintext".$oid."\" style=\"width: 300; height: 10\">";
                 echo "\t";
             }elseif($types == "RADIO BUTTON"){
-                echo "<td><input type=\"radio\" name=\"option2\" value=".$val."><font color='white' size='5em'>$val\t</font></td>";
+                echo "<input type=\"radio\" name=\"radiobutton".$oid."\" value=".$val."><font color='white' size='5em'>$val\t</font>";
                 echo "\t";
             }else{
-                echo "<td><input type=\"checkbox\" name=\"option3\" value=".$val."><font color='white' size='5em'>$val\t</font></td>";
+                echo "<input type=\"checkbox\" name=\"checkbox".$oid."\" value=".$val."><font color='white' size='5em'>$val\t</font>";
                 echo "\t";
             }
         }
+        echo "</td>";
         echo "</tr>";
-        echo "<br/>";
     }
-    echo $myJSON;
+        echo "<input type=\"button\" id=\"submit\" onclick=\"onClick();\" value=\"SUBMIT QUESTION\">";
+        echo "</form>";
     ?>
 </center>
 </div>
 </body>
+<script>
+(function(){
+ var result;
+ var jsonData = <?php echo $json;?>;
+ $('#submit').on('click', function(){
+                var data = $('form').serializeArray();
+                result = JSON.stringify(data);
+//                alert(result);
+//                 window.location.href = "./submitResult.php?fid=" +<?php echo $fid; ?> + "&result=" + escape(result);
+                 window.location.href = "./submitResult.php?jsonData=" + escape(JSON.stringify(jsonData)) + "&result=" + escape(result);
+                });
+ })();
+</script>
+
 </html>
 
 

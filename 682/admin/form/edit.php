@@ -3,6 +3,8 @@
     $username = $_GET["username"];
     $bid = $_GET["id"];
     $bname = $_GET["name"];
+    $manager = $_GET["manager"];
+    $technician = $_GET["technician"];
     ?>
 <!DOCTYPE html>
 
@@ -33,7 +35,6 @@ padding:10px 0px 30px 0px;
 </ul>
 </div>
 <div class="body">
-<div id="featured">
 <?php
     echo "<button type='button' onclick='window.location.href=\"../building/getBuilding.php?username=".$username."&name=".$bname."&id=".$bid."\"'><font size='5em'>BACK</font></button>";
     ?>
@@ -43,7 +44,8 @@ padding:10px 0px 30px 0px;
 <th><font color="white" size="5em">ID</font></th>
 <th><font color="white" size="5em">Name</font></th>
 <th><font color="white" size="5em">Building ID</font></th>
-<th></th>
+<th><font color="white" size="5em">Edit</font></th>
+<th><font color="white" size="5em">Result</font></th>
 </tr>
 <?php
     $sql = "SELECT* FROM form WHERE bid = '$bid'";
@@ -60,12 +62,12 @@ padding:10px 0px 30px 0px;
         echo "<td><font color='white' size='5em'>".$fid."</font></td>";
         echo "<td><font color='white' size='5em'>".$fname."</font></td>";
         echo "<td><font color='white' size='5em'>".$bid."</font></td>";
-        echo "<td><a href='./getQuestion.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."'>ENTER</a></td>";
+        echo "<td><a href='./getQuestion.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
+        echo "<td><a href='./showResult.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."'>VIEW</a></td>";
         echo "</tr>";
     }
     ?>
 </table></center>
-</div>
 </div>
 </div>
 </body>

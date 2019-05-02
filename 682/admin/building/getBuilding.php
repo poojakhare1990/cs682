@@ -32,14 +32,13 @@
                 </ul>
             </div>
         <div class="body">
-            <div id="featured">
                     <?php
                         $id = $_GET["id"];
                         $name = $_GET["name"];
                         
                         
                         echo "<button type='button' onclick='window.location.href=\"./addBuildingUser.php?username=".$username."&id=".$id."&name=".$name."\"'><font size='5em'>ADD USER</font></button>";
-                        echo "<button type='button' onclick='window.location.href=\"../form/buildingForm.php?username=".$username."&id=".$id."&name=".$name."\"'><font size='5em'>FORM LIST</font></button>";
+                        echo "<button type='button' onclick='window.location.href=\"../form/buildingForm.php?username=".$username."&id=".$id."&name=".$name."\"'><font size='5em'>ADD FORM</font></button>";
                         echo "<center><table border='1' width='900'>";
                         echo "<caption><font color='white' size='10em'><b>Building</b></font></caption>";
 
@@ -48,7 +47,7 @@
                         echo "<th>Name</th>";
                         echo "<th>Manager</th>";
                         echo "<th>Technician</th>";
-                        echo "<th>Edit</th>";
+                        echo "<th></th>";
                         echo "<th></th>";
                         echo "</tr>";
 
@@ -75,7 +74,6 @@
                         }
                     ?>
                 </table></center>
-            </div>
         </div>
     </div>
     </body>

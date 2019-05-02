@@ -33,7 +33,6 @@ padding:10px 0px 30px 0px;
 </ul>
 </div>
 <div class="body">
-<div id="featured">
 <?php
     echo "<button type='button' onclick='window.location.href=\"./newForm.php?username=".$username."&bname=".$bname."&bid=".$bid."\"'><font size='5em'>NEW FORM</font></button>";
     ?>
@@ -67,7 +66,6 @@ padding:10px 0px 30px 0px;
     }
     ?>
 </table></center>
-</div>
 </div>
 </div>
 </body>

@@ -26,12 +26,11 @@
                     echo"<li><a href=\"./admin.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
                     echo"<li><a href=\"./form/form.php?username=".$username."\"><font color=\"white\">Form</font></a></li>";
                     echo"<li><a href=\"./user/employee.php?username=".$username."\"><font color=\"white\">Employee</font></a></li>";
-                    echo"<li><a href=\"../../index.html\"><font color=\"white\">Logout</font></a></li>";
+                    echo"<li><a href=\"../index.html\"><font color=\"white\">Logout</font></a></li>";
                     ?>
                 </ul>
             </div>
             <div class="body">
-                <div id="featured">
                 <?php
                     echo "<button type=\"button\" onclick=\"window.location.href='./building/add.php?username=".$username."'\">";
                     echo "<font size=\"5em\">ADD BUILDING</font></button>";
@@ -69,7 +68,6 @@
                             }
                         ?>
                     </table></center>
-                </div>
             </div>
         </div>
     </body>
