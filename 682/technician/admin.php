@@ -7,7 +7,7 @@
 
 <html>
     <head>
-        <title>Technician Page</title>
+        <title>Techniciian Page</title>
         <link rel="stylesheet" href="../css/style2.css" type="text/css" />
         <style>
             body{
