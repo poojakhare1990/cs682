@@ -41,9 +41,7 @@ padding:10px 0px 30px 0px;
 <center><table border="1" width="900">
 <caption><font color="white" size="10em"><b>FORM LIST</b></font></caption>
 <tr>
-<th><font color="white" size="5em">ID</font></th>
 <th><font color="white" size="5em">Name</font></th>
-<th><font color="white" size="5em">Building ID</font></th>
 <th><font color="white" size="5em">Edit</font></th>
 <th><font color="white" size="5em">Result</font></th>
 </tr>
@@ -59,11 +57,16 @@ padding:10px 0px 30px 0px;
         $bid = $result[$i]["bid"];
         
         echo "<tr>";
-        echo "<td><font color='white' size='5em'>".$fid."</font></td>";
+//        echo "<td><font color='white' size='5em'>".$fid."</font></td>";
         echo "<td><font color='white' size='5em'>".$fname."</font></td>";
-        echo "<td><font color='white' size='5em'>".$bid."</font></td>";
-        echo "<td><a href='./getQuestion.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
-        echo "<td><a href='./showResult.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."'>VIEW</a></td>";
+//        echo "<td><font color='white' size='5em'>".$bid."</font></td>";
+        echo "<td><button type='button' onclick='window.location.href=\"./getQuestion.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>EDIT FORM</font></button></td>";
+        echo "<td><button type='button' onclick='window.location.href=\"./showResult.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>VIEW SUBMITTED FORM</font></button></td>";
+        
+        
+        
+//        echo "<td><a href='./getQuestion.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
+//        echo "<td><a href='./showResult.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."'>VIEW</a></td>";
         echo "</tr>";
     }
     ?>

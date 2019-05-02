@@ -2,7 +2,8 @@
     include("../../login/connection.php");
     $username = $_GET["username"];
     $bid = $_GET["bid"];
-    $fname = $_GET["bname"];
+    $bname = $_GET["bname"];
+    $fname = $_POST["formName"];
     
     $sql = "INSERT INTO form (fname, bid)VALUES (:fname, :bid)";
     $stmt = $conn -> prepare($sql);

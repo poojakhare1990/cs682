@@ -34,9 +34,9 @@ padding:10px 0px 30px 0px;
 <center><table border="1" width="900">
 <caption><font color="white" size="10em"><b>FORM</b></font></caption>
 <tr>
-<th><font color="white" size="5em">ID</font></th>
+
 <th><font color="white" size="5em">Name</font></th>
-<th><font color="white" size="5em">Building ID</font></th>
+
 <th></th>
 <th></th>
 </tr>
@@ -54,11 +54,15 @@ padding:10px 0px 30px 0px;
         $technician = $result[$i]["technician_id"];
         
         echo "<tr>";
-        echo "<td><font color='white' size='5em'>".$id."</font></td>";
+//        echo "<td><font color='white' size='5em'>".$id."</font></td>";
         echo "<td><font color='white' size='5em'>".$fname."</font></td>";
-        echo "<td><font color='white' size='5em'>".$bid."</font></td>";
-        echo "<td><a href='./edit.php?username=".$username."&name=".$fname."&id=".$bid."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
-        echo "<td><a href='./deleteForm.php?username=".$username."&id=".$id."&fname=".$fname."&bid=".$bid."'>DELETE</a></td>";
+//        echo "<td><font color='white' size='5em'>".$bid."</font></td>";
+        
+        echo "<td><button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$fname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>SELECT</font></button></td>";
+        echo "<td><button type='button' onclick='window.location.href=\"./deleteForm.php?username=".$username."&fid=".$id."&fname=".$fname."&bid=".$bid."\"'><font size='3em'>DELETE FORM</font></button></td>";
+        
+//        echo "<td><a href='./edit.php?username=".$username."&name=".$fname."&id=".$bid."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
+//        echo "<td><a href='./deleteForm.php?username=".$username."&id=".$id."&fname=".$fname."&bid=".$bid."'>DELETE</a></td>";
         echo "</tr>";
     }
     ?>

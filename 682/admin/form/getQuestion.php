@@ -61,9 +61,18 @@ background: #ffffff;
     ?>
 </ul>
 </div>
+<?php
+    $sql = "SELECT b.name FROM form f, building b WHERE f.bid = $bid and f.bid = b.id";
+    $res = $conn->prepare($sql);
+    $res->execute();
+    $result = $res->fetchALL(PDO::FETCH_ASSOC);
+    
+    $bname = $result[0]["name"];
+    
+    ?>
 <div class="body">
 <?php
-    echo "<button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$fname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='5em'>BACK</font></button>";
+    echo "<button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$bname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='5em'>BACK</font></button>";
     ?>
 </div>
 <center>

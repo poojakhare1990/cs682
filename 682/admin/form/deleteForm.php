@@ -17,6 +17,6 @@
     $res = $conn->prepare($sql);
     $res->execute();
     
-    echo "<script>alert(\"Form has been deleted!\"); window.location.href = './buildingForm.php?username=".$username."&id=".$bid."&name=".$fname."';</script>";
+    echo "<script>alert(\"Form has been deleted!\"); window.location.href = './form.php?username=".$username."&id=".$bid."&name=".$fname."';</script>";
     
     ?>

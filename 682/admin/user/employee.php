@@ -38,7 +38,7 @@
             echo "<caption><font color='white' size='10em'><b>Username</b></font></caption>";
     
             echo "<tr>";
-            echo "<th>ID</th>";
+//            echo "<th>ID</th>";
             echo "<th>Name</th>";
             echo "<th>Role</th>";
             echo "<th></th>";
@@ -67,10 +67,13 @@
                 }
         
                 echo "<tr>";
-                echo "<td>".$id."</td>";
+//                echo "<td>".$id."</td>";
                 echo "<td>".$name."</td>";
                 echo "<td>".$role."</td>";
-                echo "<td><a href='deleteUsernameList.php?username=".$username."&id=".$id."&name=".$name."'>DELETE</a></td>";
+                
+                echo "<td><button type='button' onclick='window.location.href=\"deleteUsernameList.php?username=".$username."&id=".$id."&name=".$name."\"'><font size='3em'>DELETE USER</font></button></td>";
+                
+//                echo "<td><a href='deleteUsernameList.php?username=".$username."&id=".$id."&name=".$name."'>DELETE</a></td>";
                 echo "</tr>";
             }
             ?>

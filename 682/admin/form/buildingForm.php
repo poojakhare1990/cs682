@@ -34,14 +34,14 @@ padding:10px 0px 30px 0px;
 </div>
 <div class="body">
 <?php
-    echo "<button type='button' onclick='window.location.href=\"./newForm.php?username=".$username."&bname=".$bname."&bid=".$bid."\"'><font size='5em'>NEW FORM</font></button>";
+    echo "<button type='button' onclick='window.location.href=\"./addFormName.php?username=".$username."&bname=".$bname."&bid=".$bid."\"'><font size='5em'>NEW FORM</font></button>";
     ?>
 <center><table border="1" width="900">
 <caption><font color="white" size="10em"><b>FORM</b></font></caption>
 <tr>
-<th><font color="white" size="5em">ID</font></th>
-<th><font color="white" size="5em">Name</font></th>
-<th><font color="white" size="5em">Building ID</font></th>
+
+<th><font color="white" size="5em">Form Name</font></th>
+
 <th></th>
 <th></th>
 </tr>
@@ -57,11 +57,16 @@ padding:10px 0px 30px 0px;
         $bid = $result[$i]["bid"];
         
         echo "<tr>";
-        echo "<td><font color='white' size='5em'>".$fid."</font></td>";
+//        echo "<td><font color='white' size='5em'>".$fid."</font></td>";
         echo "<td><font color='white' size='5em'>".$fname."</font></td>";
-        echo "<td><font color='white' size='5em'>".$bid."</font></td>";
-        echo "<td><a href='./getForm.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."'>ENTER</a></td>";
-        echo "<td><a href='./deleteForm.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."'>DELETE</a></td>";
+//        echo "<td><font color='white' size='5em'>".$bid."</font></td>";
+        
+        echo "<td><button type='button' onclick='window.location.href=\"./getForm.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."\"'><font size='3em'>ADD QUESTION</font></button></td>";
+        echo "<td><button type='button' onclick='window.location.href=\"./deleteForm.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."\"'><font size='3em'>DELETE FORM</font></button></td>";
+        
+        
+//        echo "<td><a href='./getForm.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."'>ENTER</a></td>";
+//        echo "<td><a href='./deleteForm.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."'>DELETE</a></td>";
         echo "</tr>";
     }
     ?>

@@ -1,6 +1,8 @@
 <?php
     include("../../login/connection.php");
     $username = $_GET["username"];
+    $id = $_GET["id"];
+    $name = $_GET["name"];
     ?>
 <!DOCTYPE html>
 <html>
@@ -33,17 +35,13 @@
             </div>
         <div class="body">
                     <?php
-                        $id = $_GET["id"];
-                        $name = $_GET["name"];
-                        
-                        
-                        echo "<button type='button' onclick='window.location.href=\"./addBuildingUser.php?username=".$username."&id=".$id."&name=".$name."\"'><font size='5em'>ADD USER</font></button>";
+                        echo "<button type='button' style=\"margin-right:20px\" onclick='window.location.href=\"./addBuildingUser.php?username=".$username."&id=".$id."&name=".$name."\"'><font size='5em'>ADD USER</font></button>";
                         echo "<button type='button' onclick='window.location.href=\"../form/buildingForm.php?username=".$username."&id=".$id."&name=".$name."\"'><font size='5em'>ADD FORM</font></button>";
                         echo "<center><table border='1' width='900'>";
                         echo "<caption><font color='white' size='10em'><b>Building</b></font></caption>";
 
                         echo "<tr>";
-                        echo "<th>ID</th>";
+                        //echo "<th>ID</th>";
                         echo "<th>Name</th>";
                         echo "<th>Manager</th>";
                         echo "<th>Technician</th>";
@@ -64,12 +62,16 @@
                             $technician = $result[$i]["technician_id"];
                             
                             echo "<tr>";
-                            echo "<td>".$id."</td>";
+                            //echo "<td>".$id."</td>";
                             echo "<td>".$name."</td>";
                             echo "<td>".$manager."</td>";
                             echo "<td>".$technician."</td>";
-                            echo "<td><a href='../form/edit.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
-                            echo "<td><a href='./deleteGetBuilding.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>DELETE</a></td>";
+                            
+                            echo "<td><button type='button' onclick='window.location.href=\"../form/edit.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>CHOOSE FORM</font></button></td>";
+                            echo "<td><button type='button' onclick='window.location.href=\"./deleteGetBuilding.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>DELETE FORM</font></button></td>";
+                            
+//                            echo "<td><a href='../form/edit.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
+//                            echo "<td><a href='./deleteGetBuilding.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>DELETE FORM</a></td>";
                             echo "</tr>";
                         }
                     ?>

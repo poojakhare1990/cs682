@@ -42,7 +42,7 @@ padding:10px 0px 30px 0px;
 <center><table border="1" width="900">
 <caption><font color="white" size="10em"><b>OPTIONS</b></font></caption>
 <tr>
-<th><font color="white" size="5em">ID</font></th>
+
 <th><font color="white" size="5em">Type</font></th>
 <th><font color="white" size="5em">Value</font></th>
 <th></th>
@@ -60,10 +60,13 @@ padding:10px 0px 30px 0px;
         $display = $result[$i]["display"];
         
         echo "<tr>";
-        echo "<td><font color='white' size='5em'>".$oid."</font></td>";
+//        echo "<td><font color='white' size='5em'>".$oid."</font></td>";
         echo "<td><font color='white' size='5em'>".$types."</font></td>";
         echo "<td><font color='white' size='5em'>".$val."</font></td>";
-        echo "<td><a href='./deleteOption.php?username=".$username."&oid=".$oid."&fname=".$fname."&question=".$question."&fid=".$fid."&bid=".$bid."&types=".$types."&val=".$val."'>DELETE</a></td>";
+        
+        echo "<td><button type='button' onclick='window.location.href=\"./deleteOption.php?username=".$username."&oid=".$oid."&fname=".$fname."&question=".$question."&fid=".$fid."&bid=".$bid."&types=".$types."&val=".$val."\"'><font size='3em'>DELETE OPTION</font></button></td>";
+        
+//        echo "<td><a href='./deleteOption.php?username=".$username."&oid=".$oid."&fname=".$fname."&question=".$question."&fid=".$fid."&bid=".$bid."&types=".$types."&val=".$val."'>DELETE</a></td>";
         echo "</tr>";
     }
     ?>

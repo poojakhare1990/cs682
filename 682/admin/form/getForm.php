@@ -41,7 +41,7 @@ padding:10px 0px 30px 0px;
 <center><table border="1" width="900">
 <caption><font color="white" size="10em"><b>QUESTION</b></font></caption>
 <tr>
-<th><font color="white" size="5em">ID</font></th>
+
 <th><font color="white" size="5em">Question</font></th>
 <th></th>
 <th></th>
@@ -57,10 +57,15 @@ padding:10px 0px 30px 0px;
         $question = $result[$i]["question"];
         
         echo "<tr>";
-        echo "<td><font color='white' size='5em'>".$oid."</font></td>";
+//        echo "<td><font color='white' size='5em'>".$oid."</font></td>";
         echo "<td><font color='white' size='5em'>".$question."</font></td>";
-        echo "<td><a href='./getOptions.php?username=".$username."&oid=".$oid."&fname=".$fname."&question=".$question."&fid=".$fid."&bid=".$bid."'>ENTER</a></td>";
-        echo "<td><a href='./deleteQuestion.php?username=".$username."&oid=".$oid."&fname=".$fname."&question=".$question."&fid=".$fid."&bid=".$bid."'>DELETE</a></td>";
+        
+        echo "<td><button type='button' onclick='window.location.href=\"./getOptions.php?username=".$username."&oid=".$oid."&fname=".$fname."&question=".$question."&fid=".$fid."&bid=".$bid."\"'><font size='3em'>VIEW OPTIONS</font></button></td>";
+        echo "<td><button type='button' onclick='window.location.href=\"./deleteQuestion.php?username=".$username."&oid=".$oid."&fname=".$fname."&question=".$question."&fid=".$fid."&bid=".$bid."\"'><font size='3em'>DELETE QUESTION</font></button></td>";
+        
+        
+//        echo "<td><a href='./getOptions.php?username=".$username."&oid=".$oid."&fname=".$fname."&question=".$question."&fid=".$fid."&bid=".$bid."'>ENTER</a></td>";
+//        echo "<td><a href='./deleteQuestion.php?username=".$username."&oid=".$oid."&fname=".$fname."&question=".$question."&fid=".$fid."&bid=".$bid."'>DELETE</a></td>";
         echo "</tr>";
     }
     ?>
