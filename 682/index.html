@@ -3,7 +3,7 @@
     <head>
         <title>Home</title>
         <link href="./css/style.css" rel="stylesheet" type="text/css" media="all"/>
-        <script src="./js/Login_inputCheck.js"></script>
+        <script src="./js/check.js"></script>
     </head>
     <body>
         <div class="login">
@@ -11,7 +11,7 @@
             <h2>Software Development</h2>
             <div class="login-top">
                 <h1>USER LOGIN</h1>
-                <form action="./login/Login.php" method="post" onsubmit="return checkInput()">
+                <form action="./login/Login.php" method="post" onsubmit="return checkLoginInput()">
                     <input type="text" id="usr" value="Username" name="Username"
                         onfocus="this.value = ''">
                     <input type="password" id="pwd" placeholder="Password" name="Password" onfocus="this.value = ''">

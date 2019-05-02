@@ -1,5 +1,5 @@
-function jump(){
-    window.location.href="./building.php";
+function addBuilding(){
+    window.location.href="./add.php";
 }
 function addUser(){
     window.location.href="./addUser.php";

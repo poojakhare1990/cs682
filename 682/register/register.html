@@ -4,7 +4,7 @@
 		<link href="../css/style1.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Register Page</title>
-		<script src="../js/Register_inputCheck.js"></script>
+		<script src="../js/check.js"></script>
         <style>
             body {
                 background: url(../images/banner.jpg)repeat;
@@ -18,7 +18,7 @@
 	<div class="main">
         <h1 style="text-align:center; font-size:80px; color:white;">Register</h1>
         <h2>Register your new account</h2>
-        <form action="./Register.php" method="post" onsubmit="return checkInput()">
+        <form action="./Register.php" method="post" onsubmit="return checkRegisterInput()">
             <div class="clear"> </div>
             <div class="lable-2">
                 <input type="text" id="id"class="text" name="Id" value="ID number(Number Only)"

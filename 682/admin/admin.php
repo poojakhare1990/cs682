@@ -23,40 +23,38 @@
             </div>
             <div class="body">
                 <div id="featured">
-                    <button type="button" onclick="jump()"><font size="5em">ADD TABLE</font></button>
+                    <button type="button" onclick="addBuilding()">
+                            <font size="5em">ADD BUILDING</font></button>
                     <center><table border="1" width="900">
                         <caption><font color="white" size="10em"><b>Building</b></font></caption>
                         <tr>
-                            <th><font color="white" size="5em">Number</font></th>
+                            <th><font color="white" size="5em">ID</font></th>
                             <th><font color="white" size="5em">Name</font></th>
-                            <th><font color="white" size="5em">Password</font></th>
-                            <th><font color="white" size="5em">Create</font></th>
-                            <th><font color="white" size="5em">Edit</font></th>
-                            <th><font color="white" size="5em">Change</font></th>
+                            <th><font color="white" size="5em">Manager</font></th>
+                            <th><font color="white" size="5em">Technician</font></th>
+                            <th></th>
                             <th></th>
                         </tr>
                         <?php
                             include("../login/connection.php");
-                            $sql = "SELECT* FROM login";
+                            $sql = "SELECT* FROM building";
                             $res = $conn->prepare($sql);
                             $res->execute();
                             $result = $res->fetchALL(PDO::FETCH_ASSOC);
                             for($i = 0; $i < count($result); $i++)
                             {
                                 $id = $result[$i]["id"];
-                                $username = $result[$i]["username"];
-                                $password = $result[$i]["password"];
-                                $create = $result[$i]["createAccess"];
-                                $edit = $result[$i]["editAccess"];
-                                $change = $result[$i]["changeAccess"];
+                                $name = $result[$i]["name"];
+                                $manager = $result[$i]["manager"];
+                                $technician = $result[$i]["technician"];
+                        
                                 echo "<tr>";
                                 echo "<td><font color='white' size='5em'>".$id."</font></td>";
-                                echo "<td><font color='white' size='5em'>".$username."</font></td>";
-                                echo "<td><font color='white' size='5em'>".$password."</font></td>";
-                                echo "<td><font color='white' size='5em'>".$create."</font></td>";
-                                echo "<td><font color='white' size='5em'>".$edit."</font></td>";
-                                echo "<td><font color='white' size='5em'>".$change."</font></td>";
+                                echo "<td><font color='white' size='5em'>".$name."</font></td>";
+                                echo "<td><font color='white' size='5em'>".$manager."</font></td>";
+                                echo "<td><font color='white' size='5em'>".$technician."</font></td>";
                                 echo "<td><a href='get.php?id=".$id."'>ENTER</a></td>";
+                                echo "<td><a href='delete.php?id=".$id."'>DELETE</a></td>";
                                 echo "</tr>";
                             }
                         ?>

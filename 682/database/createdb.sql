@@ -26,4 +26,17 @@ INSERT INTO `login` (`id`, `username`, `password`, `createAccess`, `editAccess`,
 INSERT INTO `login` (`id`, `username`, `password`, `createAccess`, `editAccess`, `changeAccess`) VALUES ('102', 'manager', 'manager', '0', '0', '1');
 INSERT INTO `login` (`id`, `username`, `password`, `createAccess`, `editAccess`, `changeAccess`) VALUES ('103', 'technician', 'technician', '0', '0', '0');
 
+CREATE TABLE building(
+	id VARCHAR(40) PRIMARY KEY,
+	name VARCHAR(40) NOT NULL,
+	manager VARCHAR(40) NOT NULL,
+	technician VARCHAR(40) NOT NULL
+);
+
+INSERT INTO building(id, name, manager, technician) VALUES ('101', 'AAA', 'aie', 'eia');
+INSERT INTO building(id, name, manager, technician) VALUES ('102', 'BBB', 'abc', 'cba');
+INSERT INTO building(id, name, manager, technician) VALUES ('103', 'CCC', 'umb', 'bmu');
+
+
+
 --insert into inventory(product_id, product_name, quantity) values (12, 'cheese', 100);
