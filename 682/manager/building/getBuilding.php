@@ -27,9 +27,8 @@
             <div class="header">
                 <ul>
                 <?php
-                    echo"<li><a href=\"../admin.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
-                    echo"<li><a href=\"../form/form.php?username=".$username."\"><font color=\"white\">Form</font></a></li>";
-                    echo"<li><a href=\"../user/employee.php?username=".$username."\"><font color=\"white\">Employee</font></a></li>";
+                    echo"<li><a href=\"../manager.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
+                   
                     echo"<li><a href=\"../../index.html\"><font color=\"white\">Logout</font></a></li>";
                 ?>
                 </ul>
@@ -46,8 +45,8 @@
                         echo "<th>Name</th>";
                         echo "<th>Manager</th>";
                         echo "<th>Technician</th>";
-                        echo "<th>Edit</th>";
                         echo "<th></th>";
+                        
                         echo "</tr>";
 
                         
@@ -59,16 +58,16 @@
                         {
                             $id = $result[$i]["id"];
                             $name = $result[$i]["name"];
-                            $manager = $result[$i]["manager"];
-                            $technician = $result[$i]["technician"];
+                            $manager = $result[$i]["manager_id"];
+                            $technician = $result[$i]["technician_id"];
                             
                             echo "<tr>";
                             echo "<td>".$id."</td>";
                             echo "<td>".$name."</td>";
                             echo "<td>".$manager."</td>";
                             echo "<td>".$technician."</td>";
-                            echo "<td><a href='../form/edit.php?id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
-                            echo "<td><a href='./deleteGetBuilding.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>DELETE</a></td>";
+                           
+                            echo "<td><button type='button' onclick='window.location.href=\"../form/edit.php?id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>SELECT</font></button></td>";
                             echo "</tr>";
                         }
                     ?>

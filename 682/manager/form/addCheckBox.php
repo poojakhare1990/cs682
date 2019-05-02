@@ -1,3 +1,11 @@
+<?php
+    $username = $_GET["username"];
+    $fid = $_GET["fid"];
+    $bid = $_GET["bid"];
+    $oid = $_GET["oid"];
+    $fname = $_GET["fname"];
+    $type = $_GET["type"];
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,37 +71,33 @@
     <div class="page">
         <div class="header">
             <ul>
-                <li><a href="../manager.php"><font color="white">Home</font></a></li>
-                <li><a href="../../index.html"><font color="white">Logout</font></a></li>
+<?php
+    echo"<li><a href=\"../admin.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
+    echo"<li><a href=\"./form.php?username=".$username."\"><font color=\"white\">Form</font></a></li>";
+    echo"<li><a href=\"../user/employee.php?username=".$username."\"><font color=\"white\">Employee</font></a></li>";
+    echo"<li><a href=\"../../index.html\"><font color=\"white\">Logout</font></a></li>";
+    ?>
             </ul>
         </div>
     <div class="body">
-        <center>
-            <?php
-                $id = $_GET["id"];
-                $name = $_GET["name"];
-                $username = $_GET["username"];
-                echo "<caption><font color=\"white\" size=\"10em\"><b>Technician</b></font></caption>";
-                echo "<br/>";
-                echo "<form action=\"./addBuildingUsername.php?username=$username&id=$id&name=$name\" method=\"post\" onsubmit=\"return checkTechnicianUserInput()\">";
-                echo "<div class=\"lable-2\">";
-                echo "<input type=\"text\" id=\"technician\" class=\"text\" name=\"technician\" value=\"technician\" onfocus=\"this.value = ''\"><br/>";
-                echo "</div>";
-                echo "<div class=\"submit\">";
-                echo "<input type=\"submit\" value=\"Add Technician\">";
-                echo "</div>";
-                echo "</form>";
-                ?>
+<?php
+    echo "<button type='button' onclick='window.location.href=\"./getForm.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."\"'><font size='5em'>END ADDING</font></button>";
+    ?>
+<center>
+<?php
+    echo "<caption><font color=\"white\" size=\"10em\"><b>CHECK BOX OPTIONS</b></font></caption>";
+    echo "<br/>";
+    echo "<form action=\"./addOption.php?username=".$username."&fid=".$fid."&bid=".$bid."&oid=".$oid."&type=".$type."&fname=".$fname."\" method=\"post\" onsubmit=\"return checkOptionInput()\">";
+    echo "<div class=\"lable-2\">";
+    echo "<input type=\"text\" id=\"option\" class=\"text\" name=\"option\" value=\"option\" onfocus=\"this.value = ''\"><br/>";
+    echo "</div>";
+    echo "<div class=\"submit\">";
+    echo "<input type=\"submit\" value=\"ADD OPTION\">";
+    echo "</div>";
+    echo "</form>";
+    ?>
         </center>
     </div>
-    </div>
-    <div class="footer">
-        <ul style="height:300px;">
-            <li><a href="./admin.php">Home</a></li>
-            <li><a href="./form.php">Form</a></li>
-            <li><a href="./employee.php">Employee</a></li>
-        </ul>
-        <p>&#169; Copyright &#169; 2019. Company name all rights reserved. collect from <a href="http://www.umb.edu/" title="UMB">UMB</a></p>
     </div>
 </div>
 </body>

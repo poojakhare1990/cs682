@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Page</title>
+    <title>Manager Page</title>
     <link rel="stylesheet" href="../../css/style2.css" type="text/css" />
     <script src="../../js/check.js"></script>
     <style>
@@ -66,8 +66,6 @@
         <div class="header">
             <ul>
                 <li><a href="../admin.php"><font color="white">Home</font></a></li>
-                <li><a href="../form/form.php"><font color="white">Form</font></a></li>
-                <li><a href="../user/employee.php"><font color="white">Employee</font></a></li>
                 <li><a href="../../index.html"><font color="white">Logout</font></a></li>
             </ul>
         </div>
@@ -83,18 +81,14 @@
                     <input type="text" id="manager" class="text" name="manager" value="manager" onfocus="this.value = ''"><br/>
                     <input type="text" id="technician" class="text" name="technician" value="technician" onfocus="this.value = ''"><br/>
                 </div>
-                <div class="submit">
-                    <input type="submit" value="Create Building">
-                </div>
                 </form>
                 </center>
             </div>
         </div>
         <div class="footer">
             <ul style="height:300px;">
-                <li><a href="./admin.php">Home</a></li>
-                <li><a href="./form.php">Form</a></li>
-                <li><a href="./employee.php">Employee</a></li>
+                <li><a href="./manager.php">Home</a></li>
+                
             </ul>
             <p>&#169; Copyright &#169; 2019. Company name all rights reserved. collect from <a href="http://www.umb.edu/" title="UMB">UMB</a></p>
         </div>
