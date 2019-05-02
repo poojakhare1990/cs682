@@ -1,6 +1,6 @@
 <?php
     require("../login/connection.php");
-    $id = $_POST["Id"];
+    $id = $_POST["id"];
     $username = $_POST["Username"];
     $password = $_POST["Password"];
     $role = $_POST["Role"];
@@ -25,12 +25,10 @@
         $changeAccess = true;
     }
     
-    
-//    echo "Register<br/>";
 //    echo "$id<br/>";
-//    echo "$username<br/>";
-//    echo "$password<br/>";
-//    echo "$role<br/>";
+//    echo "$name<br/>";
+//    echo "$technician<br/>";
+//    echo "$manager";
     
     try{
         $sql = "INSERT INTO login (id, username, password, createAccess, editAccess, changeAccess)VALUES (:id, :username, :password, :createAccess, :editAccess, :changeAccess)";
@@ -42,11 +40,10 @@
         $stmt -> bindParam("editAccess", $editAccess);
         $stmt -> bindParam("changeAccess", $changeAccess);
         $stmt -> execute();
-        
-//        echo "Insert Success!<br/>";
-        echo "<script>alert('Success!');window.location.href='../index.html';</script>";
+
+        echo "<script>alert('Success!');window.location.href='./employee.php';</script>";
     }catch(PDOException $e){
-        echo "<script>alert('Error!');window.location.href='../employee.php';</script>";
+        echo "<script>alert('Error!');window.location.href='./employee.php';</script>";
     }
 
 ?>

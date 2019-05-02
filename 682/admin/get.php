@@ -8,6 +8,10 @@
             background: url(../images/banner.jpg)repeat;
             padding:10px 0px 30px 0px;
             }
+            th, td{
+                color:white;
+                font-size:1.5em;
+            }
         </style>
         <script src="../js/add.js"></script>
         </head>
@@ -22,21 +26,27 @@
             </div>
         <div class="body">
             <div id="featured">
-                <button type="button" onclick="addUser()"><font size="5em">ADD USER</font></button>
-                <button type="button" onclick="deleteUser()"><font size="5em">DELETE USER</font></button>
-                <center><table border="1" width="900">
-                <caption><font color="white" size="10em"><b>Building</b></font></caption>
-                    <tr>
-                        <th><font color="white" size="5em">ID</font></th>
-                        <th><font color="white" size="5em">Name</font></th>
-                        <th><font color="white" size="5em">Manager</font></th>
-                        <th><font color="white" size="5em">Technician</font></th>
-                        <th><font color="white" size="5em">Edit</font></th>
-                    </tr>
                     <?php
                         include("../login/connection.php");
                         $id = $_GET["id"];
-                        $sql = "SELECT* FROM building WHERE id = $id";
+                        $name = $_GET["name"];
+                        
+                        
+                        echo "<button type='button' onclick='window.location.href=\"./addUser.php?id=$id&name=$name\"'><font size='5em'>ADD USER</font></button>";
+                        echo "<center><table border='1' width='900'>";
+                        echo "<caption><font color='white' size='10em'><b>Building</b></font></caption>";
+
+                        echo "<tr>";
+                        echo "<th>ID</th>";
+                        echo "<th>Name</th>";
+                        echo "<th>Manager</th>";
+                        echo "<th>Technician</th>";
+                        echo "<th>Edit</th>";
+                        echo "<th></th>";
+                        echo "</tr>";
+
+                        
+                        $sql = "SELECT* FROM building WHERE id = $id and name = '$name'";
                         $res = $conn->prepare($sql);
                         $res->execute();
                         $result = $res->fetchALL(PDO::FETCH_ASSOC);
@@ -48,11 +58,12 @@
                             $technician = $result[$i]["technician"];
                             
                             echo "<tr>";
-                            echo "<td><font color='white' size='5em'>".$id."</font></td>";
-                            echo "<td><font color='white' size='5em'>".$name."</font></td>";
-                            echo "<td><font color='white' size='5em'>".$manager."</font></td>";
-                            echo "<td><font color='white' size='5em'>".$technician."</font></td>";
-                            echo "<td><a href='edit.php?id=".$id."'>ENTER</a></td>";
+                            echo "<td>".$id."</td>";
+                            echo "<td>".$name."</td>";
+                            echo "<td>".$manager."</td>";
+                            echo "<td>".$technician."</td>";
+                            echo "<td><a href='edit.php?id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>ENTER</a></td>";
+                            echo "<td><a href='deleteGet.php?id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>DELETE</a></td>";
                             echo "</tr>";
                         }
                     ?>

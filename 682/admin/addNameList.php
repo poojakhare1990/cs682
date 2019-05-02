@@ -71,14 +71,19 @@
     <div class="body">
         <center>
             <?php
-                $id = $_GET["id"];
-                $name = $_GET["name"];
-                echo "<caption><font color=\"white\" size=\"10em\"><b>USER</b></font></caption>";
+                echo "<caption><font color=\"white\" size=\"10em\"><b>Add User</b></font></caption>";
                 echo "<br/>";
-                echo "<form action=\"./addUsername.php?id=$id&name=$name\" method=\"post\" onsubmit=\"return checkBuildingUserInput()\">";
+                echo "<form action=\"./addUsernameList.php\" method=\"post\" onsubmit=\"return checkRegisterInput()\">";
                 echo "<div class=\"lable-2\">";
-                echo "<input type=\"text\" id=\"manager\" class=\"text\" name=\"manager\" value=\"manager\" onfocus=\"this.value = ''\"><br/>";
-                echo "<input type=\"text\" id=\"technician\" class=\"text\" name=\"technician\" value=\"technician\" onfocus=\"this.value = ''\"><br/>";
+                echo "<input type=\"text\" id=\"id\" class=\"text\" name=\"id\" value=\"ID number(Number Only)\" onfocus=\"this.value = ''\" oninput =\"value=value.replace(/[^\d]/g,'')\">";
+                echo "<input type=\"text\" id=\"usr\" class=\"text\" name=\"Username\" value=\"Username\" onfocus=\"this.value = ''\"><br/>";
+                echo "<input type=\"password\" id=\"pwd1\" class=\"text\" name=\"Password\" placeholder=\"Password\" onfocus=\"this.value = ''\"><br/>";
+                echo "<input type=\"password\" id=\"pwd2\" class=\"text\" placeholder=\"Confirm Password\" onfocus=\"this.value = ''\"><br/>";
+                echo "<select name=\"Role\" style=\"appearance:none; color:inherit; font-size:1em; margin: 10px 0px;\">";
+                echo "<option value=\"Admin\">ADMIN</option>";
+                echo "<option value=\"Manager\">MANAGER</option>";
+                echo "<option value=\"Technician\">TECHNICIAN</option>";
+                echo "</select>";
                 echo "</div>";
                 echo "<div class=\"submit\">";
                 echo "<input type=\"submit\" value=\"Add User\">";

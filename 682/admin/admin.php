@@ -8,6 +8,8 @@
             body{
                 background: url(../images/banner.jpg)repeat;
                 padding:10px 0px 30px 0px;
+                overflow-x:hidden;
+                overflow-y:auto;
             }
         </style>
         <script src="../js/add.js"></script>
@@ -53,8 +55,8 @@
                                 echo "<td><font color='white' size='5em'>".$name."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$manager."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$technician."</font></td>";
-                                echo "<td><a href='get.php?id=".$id."'>ENTER</a></td>";
-                                echo "<td><a href='delete.php?id=".$id."'>DELETE</a></td>";
+                                echo "<td><a href='get.php?id=".$id."&name=".$name."'>ENTER</a></td>";
+                                echo "<td><a href='delete.php?id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>DELETE</a></td>";
                                 echo "</tr>";
                             }
                         ?>

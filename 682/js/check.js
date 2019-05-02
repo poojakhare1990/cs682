@@ -63,6 +63,19 @@ function checkCreateBuildingInput(){
         return false;
     }
 }
+function checkBuildingUserInput(){
+    var manager = document.getElementById("manager").value;
+    var technician = document.getElementById("technician").value;
+    
+    if(manager == "manager" || manager == ""){
+        alert("Manager name cannot be empty!");
+        return false;
+    }
+    if(technician == "technician" || technician == ""){
+        alert("Technician name cannot be empty!");
+        return false;
+    }
+}
 
 
 
