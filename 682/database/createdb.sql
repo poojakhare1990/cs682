@@ -1,16 +1,3 @@
-/*  File edit by Student:
-                Wenxiu Ye
-                Pooja Khare
-    Description: add new table inventory and undelivery_order
-    
-*/
--- Portable script for creating the pizza database
--- on your dev system:
--- mysql -u root -p < dev_setup.sql    
--- mysql -D pizzadb -u root -p < createdb.sql 
---  or, on topcat:
--- mysql -D <user>db -u <user> -p < createdb.sql 
-
 CREATE TABLE employees(
 	id int AUTO_INCREMENT PRIMARY KEY,
 	username VARCHAR(40) NOT NULL,
@@ -25,7 +12,7 @@ CREATE TABLE employees(
 
 INSERT INTO `employees` ( `username`, `password`, `createAccess`, `editAccess`, `changeAccess`) VALUES ('admin', 'admin', '1', '1', '1');
 INSERT INTO `employees` ( `username`, `password`, `createAccess`, `editAccess`, `changeAccess`) VALUES ( 'manager', 'manager', '0', '1', '1');
-INSERT INTO `employees` ( `username`, `password`, `createAccess`, `editAccess`, `changeAccess`) VALUES ( 'technician', 'technician', '0', '0', '0');
+INSERT INTO `employees` ( `username`, `password`, `createAccess`, `editAccess`, `changeAccess`) VALUES ( 'technician', 'technician', '0', '0', '1');
 
 CREATE TABLE building(
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -46,10 +33,11 @@ CREATE TABLE form(
 	bid VARCHAR(40) references building(id)
 	
 );
-INSERT INTO `form` ( `fname`, `bid`) VALUES ('whirlpool','1');
+INSERT INTO `form` ( `fname`, `bid`) VALUES ('AAA','101');
 
 CREATE TABLE options(
-	oid VARCHAR(40) PRIMARY KEY,
+	fid int references form(fid), 
+	oid VARCHAR(40) references question(oid),
 	types VARCHAR(40) NOT NULL,
 	val VARCHAR(40) NOT NULL,
 	display BOOLEAN NOT NULL
@@ -57,7 +45,7 @@ CREATE TABLE options(
 
 CREATE TABLE question(
 	PRIMARY KEY(oid,fid),
-	oid VARCHAR(40) references options(oid),
+	oid int NOT NULL auto_increment,
 	fid int references form(fid),
 	question VARCHAR(40) NOT NULL,
 	property varchar(100)
@@ -65,10 +53,12 @@ CREATE TABLE question(
 
 CREATE TABLE records(
 rec_id int NOT NULL auto_increment PRIMARY KEY,
-oid VARCHAR(40) references options(oid), 
+oid int references question(oid), 
 types VARCHAR(40) references options(types),
 fid  int references form(fid),
-val VARCHAR(40) references options(oid)
-)
+val VARCHAR(40) references options(oid),
+manager VARCHAR(40) NOT NULL,
+technician VARCHAR(40) NOT NULL
+);
 
 
