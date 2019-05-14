@@ -67,7 +67,7 @@
         <div class="header">
             <ul>
 <?php
-    echo"<li><a href=\"../admin.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
+    echo"<li><a href=\"../manager.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
     
     
     echo"<li><a href=\"../../index.html\"><font color=\"white\">Logout</font></a></li>";
