@@ -28,7 +28,7 @@ padding:10px 0px 30px 0px;
 <div class="header">
 <ul>
 <?php
-    echo"<li><a href=\"../technician.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
+    echo"<li><a href=\"../manager.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
     echo"<li><a href=\"../../index.html\"><font color=\"white\">Logout</font></a></li>";
     ?>
 </ul>
