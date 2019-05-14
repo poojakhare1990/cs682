@@ -66,8 +66,7 @@
                             echo "<td>".$name."</td>";
                             echo "<td>".$manager."</td>";
                             echo "<td>".$technician."</td>";
-                           
-                            echo "<td><button type='button' onclick='window.location.href=\"../form/edit.php?id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>SELECT</font></button></td>";
+                            echo "<td><button type='button' onclick='window.location.href=\"../form/edit.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>SELECT</font></button></td>";
                             echo "</tr>";
                         }
                     ?>
