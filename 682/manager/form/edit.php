@@ -59,8 +59,8 @@ padding:10px 0px 30px 0px;
 //        echo "<td><font color='white' size='5em'>".$fid."</font></td>";
         echo "<td><font color='white' size='5em'>".$fname."</font></td>";
 //        echo "<td><font color='white' size='5em'>".$bid."</font></td>";
-        echo "<td><button type='button' onclick='window.location.href=\"./getQuestion.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>EDIT FORM</font></button></td>";
-        echo "<td><button type='button' onclick='window.location.href=\"./showResult.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>VIEW SUBMITTED FORM</font></button></td>";
+        echo "<td style='text-align:center'><button type='button' onclick='window.location.href=\"./getQuestion.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>EDIT FORM</font></button></td>";
+        echo "<td style='text-align:center'><button type='button' onclick='window.location.href=\"./showResult.php?username=".$username."&fid=".$fid."&fname=".$fname."&bid=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>VIEW SUBMITTED FORM</font></button></td>";
         
         
         

@@ -1,7 +1,10 @@
+<?php
+    $username = $_GET["username"];
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Page</title>
+    <title>Manager Page</title>
     <link rel="stylesheet" href="../../css/style2.css" type="text/css" />
     <script src="../../js/check.js"></script>
     <style>
@@ -63,8 +66,12 @@
     <div class="page">
         <div class="header">
             <ul>
-                <li><a href="../manager.php"><font color="white">Home</font></a></li>
-                <li><a href="../../index.html"><font color="white">Logout</font></a></li>
+<?php
+    echo"<li><a href=\"../admin.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
+    
+    
+    echo"<li><a href=\"../../index.html\"><font color=\"white\">Logout</font></a></li>";
+    ?>
             </ul>
         </div>
     <div class="body">
@@ -72,28 +79,20 @@
             <?php
                 $id = $_GET["id"];
                 $name = $_GET["name"];
-                $username = $_GET["username"];
-                echo "<caption><font color=\"white\" size=\"10em\"><b>Technician</b></font></caption>";
+                echo "<caption><font color=\"white\" size=\"10em\"><b>USER</b></font></caption>";
                 echo "<br/>";
-                echo "<form action=\"./addBuildingUsername.php?username=$username&id=$id&name=$name\" method=\"post\" onsubmit=\"return checkTechnicianUserInput()\">";
+                echo "<form action=\"./addBuildingUsername.php?username=".$username."&id=".$id."&name=".$name."\" method=\"post\" onsubmit=\"return checkBuildingUserInput()\">";
                 echo "<div class=\"lable-2\">";
+                echo "<input type=\"text\" id=\"manager\" class=\"text\" name=\"manager\" value=\"manager\" onfocus=\"this.value = ''\"><br/>";
                 echo "<input type=\"text\" id=\"technician\" class=\"text\" name=\"technician\" value=\"technician\" onfocus=\"this.value = ''\"><br/>";
                 echo "</div>";
                 echo "<div class=\"submit\">";
-                echo "<input type=\"submit\" value=\"Add Technician\">";
+                echo "<input type=\"submit\" value=\"Add User\">";
                 echo "</div>";
                 echo "</form>";
                 ?>
         </center>
     </div>
-    </div>
-    <div class="footer">
-        <ul style="height:300px;">
-            <li><a href="./admin.php">Home</a></li>
-            <li><a href="./form.php">Form</a></li>
-            <li><a href="./employee.php">Employee</a></li>
-        </ul>
-        <p>&#169; Copyright &#169; 2019. Company name all rights reserved. collect from <a href="http://www.umb.edu/" title="UMB">UMB</a></p>
     </div>
 </div>
 </body>

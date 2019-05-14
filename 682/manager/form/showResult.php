@@ -11,7 +11,7 @@
 
 <html>
 <head>
-<title>Manager Page</title>
+<title>Technician Page</title>
 <link rel="stylesheet" href="../../css/style2.css" type="text/css" />
 <style>
 body{
@@ -28,8 +28,7 @@ padding:10px 0px 30px 0px;
 <div class="header">
 <ul>
 <?php
-    echo"<li><a href=\"../manager.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
-   
+    echo"<li><a href=\"../technician.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
     echo"<li><a href=\"../../index.html\"><font color=\"white\">Logout</font></a></li>";
     ?>
 </ul>
@@ -46,12 +45,13 @@ padding:10px 0px 30px 0px;
 <div class="body">
 <?php
     echo "<button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$bname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='5em'>BACK</font></button>";
-//    echo "<button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$fname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='5em'>BACK</font></button>";
     ?>
 <center>
-<caption><font color="white" size="10em"><b>RESULT</b></font></caption><br/>
+<caption><font color="white" size="6em"><b>Form Submitted by <?php echo "$technician" ?></b></font></caption><br/>
 <?php
     echo "<table border=\"1\" width=\"900\">";
+
+
     
     $sql = "SELECT distinct(q.question), q.oid FROM question q, records r  WHERE q.oid = r.oid and q.fid = $fid";
     $res = $conn->prepare($sql);
@@ -65,14 +65,15 @@ padding:10px 0px 30px 0px;
         echo "<td><font color='white' size='5em'>$question</font></td>";
         
         echo "<td>";
-        $query = "SELECT* FROM records WHERE oid = $oid and fid = $fid and manager = '$manager' and technician = '$technician'";
+        $query = "SELECT * FROM records WHERE oid = $oid and fid = $fid and manager = '$manager' and technician = '$technician'";
         $run = $conn->prepare($query);
         $run->execute();
         $end = $run->fetchALL(PDO::FETCH_ASSOC);
+        $v=0;
         for($j = 0; $j < count($end); $j++){
-            $value = $end[$j]["val"];
-            echo "<font color='white' size='5em'>$value\t</font>";
+            $v = $end[$j]["val"];
         }
+        echo "<font color='white' size='5em'>$v\t</font>";
         echo "</td>";
         echo "</tr>";
     }
