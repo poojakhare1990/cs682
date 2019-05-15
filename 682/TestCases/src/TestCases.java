@@ -10,7 +10,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlTable;
 
 class TestCases {
 	@Test
-	void testLoginPage() {
+	void testLoginPage() {  //Test login page
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		try {
@@ -26,7 +26,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testLoginPageFormAction() {
+	void testLoginPageFormAction() {  //Test login page form action
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String action = null;
@@ -45,7 +45,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testLoginPageUsernameInput() {
+	void testLoginPageUsernameInput() {  //Test Username input
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String usernameInput = null;
@@ -64,7 +64,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testLoginPagePasswordInput() {
+	void testLoginPagePasswordInput() {  //Test Password input
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String passwordInput = null;
@@ -83,7 +83,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPage() {
+	void testAdminPage() {  //Test title of the admin page
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String titleName = null;
@@ -101,7 +101,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageGetBuilding() {
+	void testAdminPageGetBuilding() {  //Test getBuilding table
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementName = null;
@@ -119,7 +119,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageAddBuildingNameInput() {
+	void testAdminPageAddBuildingNameInput() {  //Test addBuilding name input
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String buildingInputId = null;
@@ -138,7 +138,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageAddManagerNameInput() {
+	void testAdminPageAddManagerNameInput() {  //Test add manager name
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String managerInputId = null;
@@ -157,7 +157,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageAddTechnicianNameInput() {
+	void testAdminPageAddTechnicianNameInput() {  //Test add technician name
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String technicianInputId = null;
@@ -176,7 +176,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageAddBuildingUserNameManagerInput() {
+	void testAdminPageAddBuildingUserNameManagerInput() {  //Test add building username -- manager
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String managerInputId = null;
@@ -195,7 +195,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageAddBuildingUserNameTechnicianInput() {
+	void testAdminPageAddBuildingUserNameTechnicianInput() {  //Test add building username -- technician
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String technicianInputId = null;
@@ -214,7 +214,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageAddQuestionQuestionInput() {
+	void testAdminPageAddQuestionQuestionInput() {  //Test add question
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String questionInputId = null;
@@ -233,7 +233,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageAddQuestionQuestionTypeInput() {
+	void testAdminPageAddQuestionQuestionTypeInput() {  //Test question type selection
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String questionTypeSelectionId = null;
@@ -252,7 +252,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageFormEdit() {
+	void testAdminPageFormEdit() {  //Test edit form type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType= null;
@@ -271,7 +271,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageFormBuildingForm() {
+	void testAdminPageFormBuildingForm() {  //Test building form type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType= null;
@@ -290,7 +290,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageFormForm() {
+	void testAdminPageFormForm() {  //Test form table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType= null;
@@ -309,7 +309,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageFormGetForm() {
+	void testAdminPageFormGetForm() {  //Test getForm table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType= null;
@@ -328,7 +328,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageFormGetOptions() {
+	void testAdminPageFormGetOptions() {  //Test getOption table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType= null;
@@ -347,7 +347,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageUserEmployee() {
+	void testAdminPageUserEmployee() {  //Test employee table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType= null;
@@ -366,7 +366,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageUserAddNameListUsernameInput() {
+	void testAdminPageUserAddNameListUsernameInput() {  //Test add new user input
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String UsernameInputId = null;
@@ -385,7 +385,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageUserAddNameListPasswordInput() {
+	void testAdminPageUserAddNameListPasswordInput() {  //Test add new user password input
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String UsernameInputId = null;
@@ -404,7 +404,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testAdminPageUserAddNameListRoleInput() {
+	void testAdminPageUserAddNameListRoleInput() {  //Test add new user role input
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String RoleInputId = null;
@@ -423,7 +423,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testManagerPage() {
+	void testManagerPage() {  //Test manager title
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String title = null;
@@ -441,7 +441,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testManagerPageBuildingAdd() {
+	void testManagerPageBuildingAdd() {  //Test table type in add.php
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String formId = null;
@@ -460,7 +460,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testManagerPageBuildingAddBuildingUserTechnicianInput() {
+	void testManagerPageBuildingAddBuildingUserTechnicianInput() {  //Test technician input id
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String technicianInputId = null;
@@ -479,7 +479,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testManagerPageBuildingGetBuilding() {
+	void testManagerPageBuildingGetBuilding() {  //Test get building table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String titleText = null;
@@ -497,7 +497,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testManagerPageFormBuildingForm() {
+	void testManagerPageFormBuildingForm() {  //Test buildingForm type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType = null;
@@ -516,7 +516,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testManagerPageFormEdit() {
+	void testManagerPageFormEdit() {  //Test edit.php table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType = null;
@@ -535,7 +535,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testManagerPageFormForm() {
+	void testManagerPageFormForm() {  //Test form table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType = null;
@@ -554,7 +554,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testManagerPageFormGetForm() {
+	void testManagerPageFormGetForm() {  //Test getForm table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType = null;
@@ -573,7 +573,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testManagerPageFormGetOptions() {
+	void testManagerPageFormGetOptions() {  //Test getOption table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType = null;
@@ -592,7 +592,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testTechnicianPage() {
+	void testTechnicianPage() {  //Test technician title
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String title = null;
@@ -610,7 +610,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testTechnicianPageBuildingGetBuilding() {
+	void testTechnicianPageBuildingGetBuilding() {  //Test getBuilding table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType = null;
@@ -629,7 +629,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testTechnicianPageFormForm() {
+	void testTechnicianPageFormForm() {  //Test form table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType = null;
@@ -648,7 +648,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testTechnicianPageFormGetForm() {
+	void testTechnicianPageFormGetForm() {  //Test getForm table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType = null;
@@ -667,7 +667,7 @@ class TestCases {
 		webClient.close();
 	}
 	@Test
-	void testTechnicianPageFormView() {
+	void testTechnicianPageFormView() {  //Test view table type
 		WebClient webClient = new WebClient();
 		HtmlPage currentPage = null;
 		String elementType = null;
