@@ -1,6 +1,7 @@
 <?php
     include("../../login/connection.php");
     $username = $_GET["username"];
+    $keyword = $_POST["keyword"];
     ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +50,7 @@
             echo "</tr>";
     
     
-            $sql = "SELECT* FROM employees";
+            $sql = "SELECT* FROM employees WHERE username like '%$keyword%'";
             $res = $conn->prepare($sql);
             $res->execute();
             $result = $res->fetchALL(PDO::FETCH_ASSOC);

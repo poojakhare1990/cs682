@@ -85,6 +85,11 @@
                 echo "<input type=\"text\" id=\"usr\" class=\"text\" name=\"Username\" value=\"Username\" onfocus=\"this.value = ''\"><br/>";
                 echo "<input type=\"password\" id=\"pwd1\" class=\"text\" name=\"Password\" placeholder=\"Password\" onfocus=\"this.value = ''\"><br/>";
                 echo "<input type=\"password\" id=\"pwd2\" class=\"text\" placeholder=\"Confirm Password\" onfocus=\"this.value = ''\"><br/>";
+                echo "<input type=\"text\" id=\"firstName\" class=\"text\" name=\"firstName\" value=\"First Name\" onfocus=\"this.value = ''\"><br/>";
+                echo "<input type=\"text\" id=\"lastName\" class=\"text\" name=\"lastName\" value=\"Last Name\" onfocus=\"this.value = ''\"><br/>";
+                echo "<input type=\"text\" id=\"email\" class=\"text\" name=\"email\" value=\"Email\" onfocus=\"this.value = ''\"><br/>";
+                echo "<input type=\"text\" id=\"phoneNumber\" class=\"text\" name=\"phoneNumber\" value=\"phoneNumber(Number Only)\" onfocus=\"this.value = ''\" oninput =\"value=value.replace(/[^\d]/g,'')\"><br/>";
+
                 echo "<select name=\"Role\" style=\"appearance:none; color:inherit; font-size:1em; margin: 10px 0px;\">";
                 echo "<option value=\"Admin\">ADMIN</option>";
                 echo "<option value=\"Manager\">MANAGER</option>";

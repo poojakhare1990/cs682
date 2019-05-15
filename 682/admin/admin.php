@@ -34,6 +34,10 @@
                 <?php
                     echo "<button type=\"button\" onclick=\"window.location.href='./building/add.php?username=".$username."'\">";
                     echo "<font size=\"5em\">ADD BUILDING</font></button>";
+                    echo "<form id=\"search\" name=\"search\" action=\"./searchBuilding.php?username=".$username."\" method=\"post\">";
+                    echo "<input type=\"text\" name=\"keyword\" value=\"Building Search\" onfocus=\"this.value = ''\" style=\"width:200px; height:30px;\">";
+                    echo "<input type=\"submit\" value=\"search\" style=\"font-size:30px; width:60px; height:120px; margin-top:20px\">";
+                    echo "</form>";
                 ?>
                     <center><table border="1" width="900">
                         <caption><font color="white" size="10em"><b>Building</b></font></caption>
@@ -57,17 +61,12 @@
                                 $technician = $result[$i]["technician_id"];
                         
                                 echo "<tr>";
-                                //echo "<td><font color='white' size='5em'>".$id."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$name."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$manager."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$technician."</font></td>";
                                 
                                 echo "<td><button type='button' onclick='window.location.href=\"./building/getBuilding.php?username=".$username."&id=".$id."&name=".$name."\"'><font size='3em'>SELECT</font></button></td>";
                                 echo "<td><button type='button' onclick='window.location.href=\"./building/deleteBuilding.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."\"'><font size='3em'>DELETE</font></button></td>";
-                                
-                                
-//                                echo "<td><a href='./building/getBuilding.php?username=".$username."&id=".$id."&name=".$name."'>ENTER</a></td>";
-//                                echo "<td><a href='./building/deleteBuilding.php?username=".$username."&id=".$id."&name=".$name."&manager=".$manager."&technician=".$technician."'>DELETE</a></td>";
                                 echo "</tr>";
                             }
                         ?>
