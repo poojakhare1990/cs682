@@ -4,15 +4,18 @@ CREATE TABLE employees(
 	password VARCHAR(40) NOT NULL,
 	createAccess BOOLEAN NOT NULL,
 	editAccess BOOLEAN NOT NULL,
-	changeAccess BOOLEAN NOT NULL
-	
+	changeAccess BOOLEAN NOT NULL,
+	firstName VARCHAR(40) NOT NULL,
+	LastName VARCHAR(40) NOT NULL,
+	email VARCHAR(40) NOT NULL,
+	phoneNumber VARCHAR(40) NOT NULL	
 );
 
 
 
-INSERT INTO `employees` ( `username`, `password`, `createAccess`, `editAccess`, `changeAccess`) VALUES ('admin', 'admin', '1', '1', '1');
-INSERT INTO `employees` ( `username`, `password`, `createAccess`, `editAccess`, `changeAccess`) VALUES ( 'manager', 'manager', '0', '1', '1');
-INSERT INTO `employees` ( `username`, `password`, `createAccess`, `editAccess`, `changeAccess`) VALUES ( 'technician', 'technician', '0', '0', '1');
+INSERT INTO `employees` (`username`, `password`, `createAccess`, `editAccess`, `changeAccess`, `firstName`, `LastName`, `email`, `phoneNumber`) VALUES ('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1', '1', '1', 'JohnAdmin', 'Snow', 'jsnow@gmail.com', '6176666666');
+INSERT INTO `employees` (`username`, `password`, `createAccess`, `editAccess`, `changeAccess`, `firstName`, `LastName`, `email`, `phoneNumber`) VALUES ('manager', '1a8565a9dc72048ba03b4156be3e569f22771f23', '0', '1', '1', 'JohnManager', 'Snow', 'jsnow@gmail.com', '6176666666');
+INSERT INTO `employees` (`username`, `password`, `createAccess`, `editAccess`, `changeAccess`, `firstName`, `LastName`, `email`, `phoneNumber`) VALUES ('technician', '55d25800fb82ba29a267c932300aaa8a19767b75', '0', '0', '1', 'JohnTechnician', 'Snow', 'jsnow@gmail.com', '6176666666');
 
 CREATE TABLE building(
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
