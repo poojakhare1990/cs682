@@ -1,6 +1,7 @@
 <?php
     include("../login/connection.php");
     $username = $_GET["username"];
+    $keyword = $_POST["keyword"];
     ?>
 
 <!DOCTYPE html>
@@ -47,7 +48,7 @@
                         </tr>
                         <?php
 
-                            $sql = "SELECT* FROM building";
+                            $sql = "SELECT* FROM building WHERE name like '%$keyword%'";
                             $res = $conn->prepare($sql);
                             $res->execute();
                             $result = $res->fetchALL(PDO::FETCH_ASSOC);
