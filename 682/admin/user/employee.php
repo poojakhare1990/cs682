@@ -33,7 +33,7 @@
         </div>
     <div class="body">
         <?php
-            echo "<button type='button' onclick='window.location.href=\"./addNamelist.php?username=".$username."\"'><font size='5em'>ADD NEW USER</font></button>";
+            echo "<button type='button' onclick='window.location.href=\"./addNameList.php?username=".$username."\"'><font size='5em'>ADD NEW USER</font></button>";
             echo "<form id=\"search\" name=\"search\" action=\"./searchEmployee.php?username=".$username."\" method=\"post\">";
             echo "<input type=\"text\" name=\"keyword\" value=\"Employee Search\" onfocus=\"this.value = ''\" style=\"width:200px; height:30px;\">";
             echo "<input type=\"submit\" value=\"search\" style=\"font-size:30px; width:60px; height:120px; margin-top:20px\">";
