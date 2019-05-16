@@ -83,8 +83,8 @@
                 echo "<br/>";
                 echo "<form action=\"./addBuildingUsername.php?username=".$username."&id=".$id."&name=".$name."\" method=\"post\" onsubmit=\"return checkBuildingUserInput()\">";
                 echo "<div class=\"lable-2\">";
-                echo "<input type=\"text\" id=\"manager\" class=\"text\" name=\"manager\" value=\"manager\" onfocus=\"this.value = ''\"><br/>";
-                echo "<input type=\"text\" id=\"technician\" class=\"text\" name=\"technician\" value=\"technician\" onfocus=\"this.value = ''\"><br/>";
+                echo "<input type=\"text\" id=\"manager\" class=\"text\" name=\"manager\" value=\"Enter Manager ID\" onfocus=\"this.value = ''\"><br/>";
+                echo "<input type=\"text\" id=\"technician\" class=\"text\" name=\"technician\" value=\"Enter Technician ID\" onfocus=\"this.value = ''\"><br/>";
                 echo "</div>";
                 echo "<div class=\"submit\">";
                 echo "<input type=\"submit\" value=\"Add User\">";
