@@ -39,7 +39,6 @@
                     <center><table border="1" width="900">
                         <caption><font color="white" size="10em"><b>Building</b></font></caption>
                         <tr>
-                            <th><font color="white" size="5em">ID</font></th>
                             <th><font color="white" size="5em">Name</font></th>
                             <th><font color="white" size="5em">Manager</font></th>
                             <th><font color="white" size="5em">Technician</font></th>
@@ -59,7 +58,6 @@
                                 $technician = $result[$i]["technician_id"];
 
                                 echo "<tr>";
-                                echo "<td><font color='white' size='5em'>".$id."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$name."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$manager."</font></td>";
                                 echo "<td><font color='white' size='5em'>".$technician."</font></td>";
