@@ -47,7 +47,7 @@ padding:10px 0px 30px 0px;
     echo "<button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$bname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='5em'>BACK</font></button>";
     ?>
 <center>
-<caption><font color="white" size="6em"><b>Form Submitted by <?php echo "$technician" ?></b></font></caption><br/>
+<caption><font color="white" size="6em"><b>Form Submitted by <?php echo "$manager" ?></b></font></caption><br/>
 <?php
     echo "<table border=\"1\" width=\"900\">";
 
