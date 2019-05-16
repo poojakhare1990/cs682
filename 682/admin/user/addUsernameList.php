@@ -17,19 +17,19 @@
     
     if($role == "Admin"){
         global $createAccess, $editAccess, $changeAccess;
-        $createAccess = true;
-        $editAccess = true;
-        $changeAccess = true;
+        $createAccess = 1;
+        $editAccess = 1;
+        $changeAccess = 1;
     }elseif($role == "Manager"){
         global $createAccess, $editAccess, $changeAccess;
-        $createAccess = false;
-        $editAccess = true;
-        $changeAccess = true;
+        $createAccess = 0;
+        $editAccess = 1;
+        $changeAccess = 1;
     }else{
         global $createAccess, $editAccess, $changeAccess;
-        $createAccess = false;
-        $editAccess = false;
-        $changeAccess = true;
+        $createAccess = 0;
+        $editAccess = 0;
+        $changeAccess = 1;
     }
     
     try{
