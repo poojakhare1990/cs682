@@ -47,9 +47,6 @@
         $stmt -> execute();
     }
     
-    global $submitted;
-    $submitted = $_GET["technician"];
-
     echo "<script>window.location.href = './showResult.php?username=".$username."&fid=".$fid."&bid=".$bid."&fname=".$fname."&manager=".$manager."&technician=".$technician."';</script>";
     
     ?>
