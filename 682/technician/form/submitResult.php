@@ -2,7 +2,7 @@
     include("../../login/connection.php");
     $result = $_GET["result"];
     $jsonData = $_GET["jsonData"];
-    
+
     $obj = json_decode($jsonData);
     $username =  $obj -> username;
     $fid = $obj -> fid;
@@ -24,13 +24,14 @@
         
         $type = str_replace($oid, "", $str);
         
-        $sql = "INSERT INTO records (oid, types, fid, val, manager, technician)VALUES (:oid, :types, :fid, :val, :manager, :technician)";
+        $sql = "INSERT INTO records (oid, types, fid, val, manager, technician, submit)VALUES (:oid, :types, :fid, :val, :manager, :technician, :submit)";
         $stmt = $conn -> prepare($sql);
         $stmt -> bindParam(":oid", $oid);
         $stmt -> bindParam(":fid", $fid);
         $stmt -> bindParam(":val", $value);
         $stmt -> bindParam(":manager", $manager);
         $stmt -> bindParam(":technician", $technician);
+        $stmt -> bindParam(":submit", $technician);
         
         if($type == "plaintext"){
             $tmp = "PLAIN TEXT";
@@ -46,7 +47,9 @@
         $stmt -> execute();
     }
     
-    
+    global $submitted;
+    $submitted = $_GET["technician"];
+
     echo "<script>window.location.href = './showResult.php?username=".$username."&fid=".$fid."&bid=".$bid."&fname=".$fname."&manager=".$manager."&technician=".$technician."';</script>";
     
     ?>

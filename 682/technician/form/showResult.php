@@ -6,6 +6,7 @@
     $fname = $_GET["fname"];
     $manager = $_GET["manager"];
     $technician = $_GET["technician"];
+    global $submitted;
     ?>
 <!DOCTYPE html>
 
@@ -46,11 +47,9 @@ padding:10px 0px 30px 0px;
 <?php
     echo "<button type='button' onclick='window.location.href=\"./view.php?username=".$username."&name=".$bname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='5em'>BACK</font></button>";
     ?>
-<center>
-<caption><font color="white" size="6em"><b>Form Submitted by <?php echo "$technician" ?></b></font></caption><br/>
+
 <?php
     echo "<table border=\"1\" width=\"900\">";
-
 
     
     $sql = "SELECT distinct(q.question), q.oid FROM question q, records r  WHERE q.oid = r.oid and q.fid = $fid";
@@ -70,14 +69,17 @@ padding:10px 0px 30px 0px;
         $run->execute();
         $end = $run->fetchALL(PDO::FETCH_ASSOC);
         $v=0;
+        $submitBy="";
         for($j = 0; $j < count($end); $j++){
             $v = $end[$j]["val"];
+            $submitBy = $end[$j]["submit"];
         }
         echo "<font color='white' size='5em'>$v\t</font>";
         echo "</td>";
         echo "</tr>";
     }
     ?>
+    <center> <caption><font color="white" size="6em"><b>Submit by <?php echo "$submitBy" ?></b></font></caption><br/>
 </center>
 </div>
 </div>
