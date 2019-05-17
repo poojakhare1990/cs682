@@ -24,13 +24,14 @@
         
         $type = str_replace($oid, "", $str);
         
-        $sql = "INSERT INTO records (oid, types, fid, val, manager, technician)VALUES (:oid, :types, :fid, :val, :manager, :technician)";
+        $sql = "INSERT INTO records (oid, types, fid, val, manager, technician, submit)VALUES (:oid, :types, :fid, :val, :manager, :technician, :submit)";
         $stmt = $conn -> prepare($sql);
         $stmt -> bindParam(":oid", $oid);
         $stmt -> bindParam(":fid", $fid);
         $stmt -> bindParam(":val", $value);
         $stmt -> bindParam(":manager", $manager);
         $stmt -> bindParam(":technician", $technician);
+        $stmt -> bindParam(":submit", $manager);
         
         if($type == "plaintext"){
             $tmp = "PLAIN TEXT";

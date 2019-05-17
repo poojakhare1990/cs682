@@ -46,8 +46,8 @@ padding:10px 0px 30px 0px;
 <?php
     echo "<button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$bname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='5em'>BACK</font></button>";
     ?>
-<center>
-<caption><font color="white" size="6em"><b>Form Submitted by <?php echo "$manager" ?></b></font></caption><br/>
+
+
 <?php
     echo "<table border=\"1\" width=\"900\">";
 
@@ -70,14 +70,17 @@ padding:10px 0px 30px 0px;
         $run->execute();
         $end = $run->fetchALL(PDO::FETCH_ASSOC);
         $v=0;
+        $submitBy="";
         for($j = 0; $j < count($end); $j++){
             $v = $end[$j]["val"];
+            $submitBy = $end[$j]["submit"];
         }
         echo "<font color='white' size='5em'>$v\t</font>";
         echo "</td>";
         echo "</tr>";
     }
     ?>
+        <center> <caption><font color="white" size="6em"><b>Submit by <?php echo "$submitBy" ?></b></font></caption><br/>
 </center>
 </div>
 </div>
