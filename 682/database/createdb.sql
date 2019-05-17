@@ -61,7 +61,8 @@ types VARCHAR(40) references options(types),
 fid  int references form(fid),
 val VARCHAR(40) references options(oid),
 manager VARCHAR(40) NOT NULL,
-technician VARCHAR(40) NOT NULL
+technician VARCHAR(40) NOT NULL,
+submit VARCHAR(40) NOT NULL
 );
 
 
