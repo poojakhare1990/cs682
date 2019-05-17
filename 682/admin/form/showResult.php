@@ -30,7 +30,7 @@ padding:10px 0px 30px 0px;
 <?php
     echo"<li><a href=\"../admin.php?username=".$username."\"><font color=\"white\">Home</font></a></li>";
     echo"<li><a href=\"./form.php?username=".$username."\"><font color=\"white\">Form</font></a></li>";
-    echo"<li><a href=\"../../user/employee.php?username=".$username."\"><font color=\"white\">Employee</font></a></li>";
+    echo"<li><a href=\"../user/employee.php?username=".$username."\"><font color=\"white\">Employee</font></a></li>";
     echo"<li><a href=\"../../index.html\"><font color=\"white\">Logout</font></a></li>";
     ?>
 </ul>
@@ -49,11 +49,10 @@ padding:10px 0px 30px 0px;
     echo "<button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$bname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='5em'>BACK</font></button>";
 //    echo "<button type='button' onclick='window.location.href=\"./edit.php?username=".$username."&name=".$fname."&id=".$bid."&manager=".$manager."&technician=".$technician."\"'><font size='5em'>BACK</font></button>";
     ?>
-<center>
-<caption><font color="white" size="10em"><b>RESULT</b></font></caption><br/>
+
+
 <?php
     echo "<table border=\"1\" width=\"900\">";
-    
     $sql = "SELECT distinct(q.question), q.oid FROM question q, records r  WHERE q.oid = r.oid and q.fid = $fid";
     $res = $conn->prepare($sql);
     $res->execute();
@@ -66,18 +65,20 @@ padding:10px 0px 30px 0px;
         echo "<td><font color='white' size='5em'>$question</font></td>";
         
         echo "<td>";
-        $query = "SELECT* FROM records WHERE oid = $oid and fid = $fid and manager = '$manager' and technician = '$technician'";
+        $query = "SELECT * FROM records WHERE oid = $oid and fid = $fid and manager = '$manager' and technician = '$technician'";
         $run = $conn->prepare($query);
         $run->execute();
         $end = $run->fetchALL(PDO::FETCH_ASSOC);
         for($j = 0; $j < count($end); $j++){
             $value = $end[$j]["val"];
             echo "<font color='white' size='5em'>$value\t</font>";
+            $submitBy = $end[$j]["submit"];
         }
         echo "</td>";
         echo "</tr>";
     }
     ?>
+    <center> <caption><font color="white" size="6em"><b>Last submission: by <?php echo "$submitBy" ?></b></font></caption><br/>
 </center>
 </div>
 </div>
